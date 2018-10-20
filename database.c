@@ -32,11 +32,12 @@ void createdb(struct database record[100], int n)
         }
         printf("\nEnter the name of the employee - ");
         // scanf ("%[^\n]%*c", record[i].name);
-        scanf ("%s", &record[i].name);
+        scanf ("%s", record[i].name);
         printf("\nEnter the phone number of the employee - ");
         while(1)
+		
         {
-            scanf ("%s", &record[i].phone);
+            scanf ("%s", record[i].phone);
             if(strlen(record[i].phone) == 10) break;
             else printf("\nInvalid phone number, Please try again - ");
         }
@@ -64,7 +65,7 @@ int add(struct database record[100], int n)
     while(1)
     {
         flg = 0;
-        scanf ("%d", &record[n].id);
+        scanf ("%d", record[n].id);
         for(j = 0; j<i; j++)
             if(record[n].id == record[j].id)
             {
@@ -74,11 +75,11 @@ int add(struct database record[100], int n)
         if(flg == 0) break;
     }
     printf("\nEnter the name of the employee - ");
-    scanf ("%s", &record[n].name);
+    scanf ("%s", record[n].name);
     printf("\nEnter the phone number of the employee - ");
     while(1)
     {
-        scanf ("%s", &record[n].phone);
+        scanf ("%s", record[n].phone);
         if(strlen(record[n].phone) == 10) break;
         else printf("\nInvalid phone number, Please try again - ");
     }
@@ -125,16 +126,16 @@ void modify(struct database record[100],int no, int id)
     else
     {
         printf("\nEnter the name of the employee - ");
-        scanf ("%s", &record[val].name);
+        scanf ("%s", record[val].name);
         printf("\nEnter the phone number of the employee - ");
         while(1)
         {
-            scanf ("%s", &record[val].phone);
+            scanf ("%s", record[val].phone);
             if(strlen(record[val].phone) == 10) break;
             else printf("\nInvalid phone number, Please try again - ");
         }
         printf("\nEnter the salary of the employee - ");
-        scanf ("%ld", &record[val].salary);
+        scanf ("%ld", record[val].salary);
     }
 }
 int delete(struct database record[100],int no, int id)
